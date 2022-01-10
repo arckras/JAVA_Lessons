@@ -23,14 +23,9 @@ public class Main {
 
         System.out.println("");
         System.out.println("---Выводим значения ячеек массива оператором foreach---");
-        int[] var8 = araiV1;
-        int var4 = araiV1.length;
-
-        for(int var5 = 0; var5 < var4; ++var5) {
-            int item = var8[var5];
+        araiV1[3] = 68;
+        for(int item: araiV1){
             System.out.println(item);
         }
-
-        System.out.println("");
     }
 }
