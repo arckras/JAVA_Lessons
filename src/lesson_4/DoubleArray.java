@@ -1,6 +1,4 @@
-public class doubleArray {
-    public doubleArray() {
-    }
+public class DoubleArray {
 
     public static void main(String[] args) {
         System.out.println("---Выводим суммы двух первых ячеек двумерного массива---");
@@ -11,8 +9,10 @@ public class doubleArray {
         System.out.println(array[1][0] + array[0][0]);
 
         System.out.println("---Выводим матрицу массива оператором for---");
-        for ( int i = 0; i < array.length; i++) {
-            if (i != 0) {System.out.println();}
+        for (int i = 0; i < array.length; i++) {
+            if (i != 0) {
+                System.out.println();
+            }
             for (int j = 0; j < array[i].length; j++) {
                 System.out.printf("%3d", array[i][j]);
             }
@@ -20,10 +20,12 @@ public class doubleArray {
 
         System.out.println("\n\n---Выводим матрицу массива оператором foreach---");
         int counter = 0;
-        for (int Row[]: array) {
-            if (counter != 0) {System.out.println();}
-            for (int Column:Row) {
-                System.out.printf("%3d",Column);
+        for (int Row[] : array) {
+            if (counter != 0) {
+                System.out.println();
+            }
+            for (int Column : Row) {
+                System.out.printf("%3d", Column);
                 counter++;
             }
         }
