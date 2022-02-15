@@ -20,11 +20,11 @@ public class DoubleArray {
 
         System.out.println("\n\n---Выводим матрицу массива оператором foreach---");
         int counter = 0;
-        for (int Row[] : array) {
+        for (int row[] : array) {
             if (counter != 0) {
                 System.out.println();
             }
-            for (int Column : Row) {
+            for (int Column : row) {
                 System.out.printf("%3d", Column);
                 counter++;
             }
