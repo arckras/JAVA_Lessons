@@ -1,3 +1,5 @@
+import sun.plugin.dom.exception.BrowserNotSupportedException;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -21,10 +23,9 @@ public class Main {
         System.out.println("---Выводим значения ячеек массива оператором foreach---");
         array[3] = 68;
 
-        for (int i = 0; i < array.length; ++i) {
-            int item = array[i];
-            System.out.println(item);
+        for (int row : array) {
+            System.out.println(row);
         }
-        System.out.println("");
+        System.out.println(""); 
     }
 }
