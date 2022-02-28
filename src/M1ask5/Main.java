@@ -28,10 +28,31 @@ import java.util.Scanner;
 class Main {
     public static void main(String[] args) {
 
-        int transferredMoney, maxMoney = 0, commission = 0, BANKINTEREST = 7, restMoney;
+        //      int transferredMoney, maxMoney = 0, commission = 0, BANKINTEREST = 7, restMoney;
 
-        System.out.print("\nСумма к переводу: ");
-        transferredMoney = intScanner();
+        //    System.out.print("\nСумма к переводу: ");
+        //   transferredMoney = intScanner();
+
+
+        int userSum = 0;//сумма к переводу//
+        int maxSumRaw = 0;
+        System.out.println("Введите сумму перевода ");
+        userSum = new Scanner(System.in).nextInt();
+        int feeRaw = (userSum / 100 + 1) * 7;
+        maxSumRaw = (userSum - feeRaw);
+        int fee = (maxSumRaw / 100 + 1) * 7;
+        int maxSum = (userSum - fee);// реальная сумма
+        int coverage = (100 * fee) / 7;//допустимая к переводу суммa
+        int result;
+        if (maxSum > coverage) {
+            result = coverage;
+        } else {
+            result = maxSum;
+        }
+        System.out.println("максимальная сумма " + result + " комиссия " + fee);
+    }
+}
+
 
         /*
                 int a;
@@ -62,7 +83,7 @@ class Main {
 
 
          */
-        restMoney = transferredMoney - BANKINTEREST;
+      //  restMoney = transferredMoney - BANKINTEREST;
 
         //if (restMoney >= BANKINTEREST && restMoney >= 100) {
 /*
@@ -87,7 +108,7 @@ class Main {
         }
         //break;
         //   else  {
-        */
+
         if (transferredMoney > 100) {
             int temp = transferredMoney / 100;
             commission += BANKINTEREST;
@@ -106,6 +127,12 @@ class Main {
         System.out.println("Комиссия: "+commission);
         System.out.println("Остаток: "+restMoney);
 
+
+
+
+
+
+
 }
 
     private static int intScanner() {
@@ -117,3 +144,4 @@ class Main {
         return sc.nextInt();
     }
 }
+*/
