@@ -2,7 +2,7 @@ package PaladinsTask1;
 
 import java.util.Scanner;
 
-public class Main {
+public class InputAndOutput {
     /*
         По 1 уроку:
         Первые две задачи с hackerrank на ввод и вывод.
@@ -16,30 +16,29 @@ public class Main {
         Возраст: 34
     */
     public static void main(String args[]) {
-
         int value1, value2, age;
-        Double division;
-        String family, name;
+        Double quotient;
+        String surname, name;
 
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите value1 ");
         value1 = sc.nextInt();
         System.out.print("Введите value2 ");
         value2 = sc.nextInt();
-        System.out.println("Сумма = " + value1 + value2);
+        System.out.println("Сумма = " + (value1 + value2));
         System.out.println("Разность = " + (value1 - value2));
         System.out.println("Произведение = " + value1 * value2);
-        division = (double) value1 / value2;
-        System.out.printf("Частное = %.5f", division);
+        quotient = (double) value1 / value2;
+        System.out.printf("Частное = %.5f", quotient);
 
         sc.nextLine();
         System.out.print("\n\nВведите Фамилию ");
-        family = sc.nextLine();
+        surname = sc.nextLine();
         System.out.print("Введите Имя ");
         name = sc.nextLine();
         System.out.print("Введите возраст ");
         age = sc.nextInt();
-        System.out.println("\nФамилия: " + family);
+        System.out.println("\nФамилия: " + surname);
         System.out.println("Имя: " + name);
         System.out.println("Возраст: " + age);
     }
