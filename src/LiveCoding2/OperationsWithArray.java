@@ -1,26 +1,14 @@
-/*
-Написать программу со следующим функционалом.
-Ввести массив чисел
-Вывести массив чисел
-Изменить элемент массива (ввести его номер и новое значение)
-Удалить элемент массива
-Добавить новый элемент массива.
-Заполнить весь массив введённым числом.
-Выйти из программы
-Программа имеет "меню" , то есть запрашивает у пользователя действия. По аналогии с задачей ПусиФидер.
- */
-
 package LiveCoding2;
 
 import java.util.Scanner;
 
-public class Main {
+public class OperationsWithArray {
     static int array[] = new int[0];
 
     public static void main(String[] args) {
 
         int choiceActions;
-        final int MAXACTIONS = 5;
+        final int MAXACTIONS = 6;
 
         if (array.length == 0) {
             System.out.println("\nМассив пуст. Необходимо его заполнить.");
@@ -34,7 +22,8 @@ public class Main {
                 System.out.println("  2. Вывести массив чисел");
                 System.out.println("  3. Изменить элемент массива");
                 System.out.println("  4. Удалить элемент массива");
-                System.out.println("  5. Заполнить массив числом");
+                System.out.println("  5. Добавить элемент массива");
+                System.out.println("  6. Заполнить массив числом");
                 System.out.print("Выберите цифру (" + (MAXACTIONS + 1) + " - выход): ");
 
                 choiceActions = intScanner();
@@ -56,6 +45,9 @@ public class Main {
                     deleteArrayElement();
                     break;
                 case 5:
+                    addArrayElement();
+                    break;
+                case 6:
                     fillArrayWithNumber();
                     break;
             }
@@ -102,21 +94,35 @@ public class Main {
         printArray(array);
 
         System.out.print("\nВведите индекс элемента для удаления: ");
-        int temp = intScanner()-1;
+        int temp = intScanner() - 1;
         int tempArray[] = new int[array.length - 1];
-        for (int i = 0, j = 0; i < array.length; i++, j++) {
+        for (int i = 0, j = 0; i < tempArray.length; i++, j++) {
             if (i == temp) i++;
             tempArray[j] = array[i];
         }
 
-        int array[] = new int [tempArray.length];
-        for (int i = 0; i < tempArray.length; i++) {
-            array[i] = tempArray[i];
-        }
+        array = tempArray;
+
         System.out.print("\nИндекс:    ");
         for (int i = 1; i < array.length + 1; i++) System.out.printf("[%d] ", i);
         printArray(array);
+    }
 
+    private static void addArrayElement() {
+        //    System.out.print("\nИндекс:    ");
+        //    for (int i = 1; i < array.length + 1; i++) System.out.printf("[%d] ", i);
+        printArray(array);
+
+        System.out.print("\nВведите добавляемое значение: ");
+        int temp = intScanner() ;
+        int tempArray[] = new int[array.length + 1];
+        int i;
+        for (i = 0; i < array.length; i++) {
+            tempArray[i] = array[i];
+        }
+        tempArray[i ] = temp;
+        array = tempArray;
+        printArray(array);
     }
 
     private static void fillArrayWithNumber() {
