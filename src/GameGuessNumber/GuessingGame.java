@@ -2,7 +2,7 @@ package GameGuessNumber;
 
 import java.util.Scanner;
 
-public class Main {
+public class GuessingGame {
 
     public static void main(String[] args) {
 
