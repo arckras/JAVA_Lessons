@@ -4,20 +4,38 @@ import java.util.Scanner;
 
 public class TaskIfElse {
     public static void main(String args[]) {
-        Scanner sc = new Scanner(System.in);
-
-        СomparisonWith10(sc);
-        BooleanComparison(sc);
-        StringComparison(sc);
-        BooleanAndIntegerComparisons(sc);
+        СomparisonWith10();
+        BooleanComparison();
+        StringComparison();
+        BooleanAndIntegerComparisons();
     }
 
-    private static void СomparisonWith10(Scanner sc) {
+    private static int intScanner() {
+        Scanner sc = new Scanner(System.in);
+        while (!sc.hasNextInt()) {
+            System.out.println("Вы ввели не целое число");
+            sc.next();
+        }
+        return sc.nextInt();
+    }
+
+    private static String stringScanner() {
+        Scanner sc = new Scanner(System.in);
+        String sound = sc.next();
+
+        while (!sound.matches("[а-яА-Я]+")) {
+            System.out.println("Ошибка, повторите ввод");
+            sound = sc.next();
+        }
+        return sound;
+    }
+
+    private static void СomparisonWith10() {
         int value;
 
         System.out.print("\n1. --------- ");
         System.out.print("\nВведите число ");
-        value = sc.nextInt();
+        value = intScanner();
 
         if (value > 10) {
             System.out.printf("Число больше 10");
@@ -28,7 +46,7 @@ public class TaskIfElse {
         }
     }
 
-    private static void BooleanComparison(Scanner sc) {
+    private static void BooleanComparison() {
         System.out.print("\n2. --------- ");
         boolean statement = true;
         int a, b;
@@ -56,7 +74,7 @@ public class TaskIfElse {
             System.out.println("a = b " + statement);
         }
         System.out.print("\nВведите число (60) ");
-        a = sc.nextInt();
+        a = intScanner();
         b = 60;
         statement = a == b;
         if (statement) {
@@ -64,13 +82,13 @@ public class TaskIfElse {
         }
         a = 100;
         System.out.print("Введите число (101) ");
-        b = sc.nextInt();
+        b = intScanner();
         statement = a < b;
         if (statement) {
             System.out.println("a < b " + statement);
         }
         System.out.print("Введите число (30) ");
-        a = sc.nextInt();
+        a = intScanner();
         b = 60;
         a = a + b / 2;
         statement = a == b;
@@ -78,7 +96,7 @@ public class TaskIfElse {
             System.out.println("a = b " + statement);
         }
         System.out.print("Введите число (73) ");
-        a = sc.nextInt();
+        a = intScanner();
         b = 146;
         a = a + b / 2;
         statement = a == b;
@@ -87,12 +105,12 @@ public class TaskIfElse {
         }
     }
 
-    private static void StringComparison (Scanner sc){
+    private static void StringComparison() {
         System.out.print("\n3. --------- ");
-        sc.nextLine();
+        //stringScanner();
         String anser;
         System.out.print("\nЧто говорит кошка? ");
-        anser = sc.nextLine().toLowerCase();
+        anser = stringScanner().toLowerCase();
         if (anser.equals("мяу")) {
             System.out.println("Да верно");
         } else {
@@ -100,14 +118,14 @@ public class TaskIfElse {
         }
     }
 
-    private static void BooleanAndIntegerComparisons (Scanner sc){
+    private static void BooleanAndIntegerComparisons() {
         System.out.print("\n4. --------- ");
         int value1, value2;
         boolean statement1, statement2;
         System.out.print("\nВведите число ");
-        value1 = sc.nextInt();
+        value1 = intScanner();
         System.out.print("Введите число ");
-        value2 = sc.nextInt();
+        value2 = intScanner();
         statement1 = value1 > value2;
         statement2 = value1 < value2;
         if (statement1) {
