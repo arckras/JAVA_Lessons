@@ -6,17 +6,17 @@ public class GuessingGame {
     public static void main(String[] args) {
         int lowLimit = 0;
         int upperLimit = 100;
-        int numbOfAttempts = 10;
+        int numberOfAttempts = 10;
         int randomNumber = (int) (Math.random() * 100 + 1);
         int userInput;
         boolean isGuess = true;
 
-        for (int i = 1; i <= numbOfAttempts; ++i) {
+        for (int i = 1; i <= numberOfAttempts; ++i) {
 
-            System.out.println("Попытка № " + i + " из " + numbOfAttempts);
-            System.out.println("Угадай число от " + lowLimit + " до " + upperLimit);
+            System.out.println("Попытка № " + i + " из " + numberOfAttempts);
+            System.out.println("Угадай число от " + lowLimit + " до " + upperLimit + " ");
 
-            userInput = new Scanner(System.in).nextInt();
+            userInput = integerScanner();
 
             if (userInput <= lowLimit | userInput >= upperLimit) {
                 System.out.println("\nЧисло вне диапазона!");
@@ -35,5 +35,14 @@ public class GuessingGame {
             }
         }
         if (isGuess) System.out.println("УВЫ, Нужна другая стратегия");
+    }
+
+    private static int integerScanner() {
+        Scanner sc = new Scanner(System.in);
+        while (!sc.hasNextInt()) {
+            System.out.println("Вы ввели не целое число");
+            sc.next();
+        }
+        return sc.nextInt();
     }
 }
