@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class ConstructionsAndCycles {
     public static void main(String args[]) {
-        Factorial();
-        Scanner sc = EvenNumbers();
-        ReverseOrder(sc);
-        InvertMatrix();
+        factorial();
+        evenNumbers();
+        reverseOrder();
+        invertMatrix();
     }
 
-    private static void InvertMatrix() {
+    private static void invertMatrix() {
         System.out.print("\n4. --------- \n");
         int matr[][] = {{1, 2, 3, 4, 5}, {6, 7, 8, 9, 10}, {11, 12, 13, 14, 15}, {16, 17, 18, 19, 20}, {21, 22, 23, 24, 25}};
         System.out.println("Иcходная квадратная матрица");
@@ -42,9 +42,10 @@ public class ConstructionsAndCycles {
         }
     }
 
-    private static void ReverseOrder(Scanner sc) {
+    private static void reverseOrder() {
         System.out.print("\n3. --------- \n");
         System.out.print("Введите длинну массива ");
+        Scanner sc = new Scanner(System.in);
         int val1 = sc.nextInt();
         String array[] = new String[val1];
         for (int i = 0; i < val1; i++) {
@@ -56,7 +57,7 @@ public class ConstructionsAndCycles {
         }
     }
 
-    private static Scanner EvenNumbers() {
+    private static Scanner evenNumbers() {
         System.out.println("\n2. ---------");
         Scanner sc = new Scanner(System.in);
         System.out.print("Введите начало диапазона ");
@@ -72,7 +73,7 @@ public class ConstructionsAndCycles {
         return sc;
     }
 
-    private static void Factorial() {
+    private static void factorial() {
         System.out.println("\n1. ---------");
         System.out.print("Введите число для вычисления факториала: ");
         int factorial = intScanner();
