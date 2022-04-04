@@ -45,32 +45,29 @@ public class ConstructionsAndCycles {
     private static void reverseOrder() {
         System.out.print("\n3. --------- \n");
         System.out.print("Введите длинну массива ");
-        Scanner sc = new Scanner(System.in);
-        int val1 = sc.nextInt();
-        String array[] = new String[val1];
+        int val1 = intScanner();
+        int array[] = new int[val1];
         for (int i = 0; i < val1; i++) {
             System.out.print("Введите значение ");
-            array[i] = sc.next();
+            array[i] = intScanner();
         }
         for (int i = array.length - 1; i >= 0; i--) {
             System.out.print(array[i] + " ");
         }
     }
 
-    private static Scanner evenNumbers() {
+    private static void evenNumbers() {
         System.out.println("\n2. ---------");
-        Scanner sc = new Scanner(System.in);
         System.out.print("Введите начало диапазона ");
-        int val1 = sc.nextInt();
+        int val1 = intScanner();
         System.out.print("Введите конец диапазона ");
-        int val2 = sc.nextInt();
+        int val2 = intScanner();
         System.out.print("Чётные числа диапазона: ");
         for (int i = val1; i <= val2; i++) {
             if (i % 2 == 0) {
                 System.out.print(i + " ");
             }
         }
-        return sc;
     }
 
     private static void factorial() {
